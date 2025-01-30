@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服薬時間設定</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>服薬時間設定</h1>
+        <div class="days-card">
+            <label class="radio-container" id="monday-container">
+                <input type="radio" name="day" id="monday" onclick="showDaySettings('monday')"> 月
+            </label>
+            <label class="radio-container" id="tuesday-container">
+                <input type="radio" name="day" id="tuesday" onclick="showDaySettings('tuesday')"> 火
+            </label>
+            <label class="radio-container" id="wednesday-container">
+                <input type="radio" name="day" id="wednesday" onclick="showDaySettings('wednesday')"> 水
+            </label>
+            <label class="radio-container" id="thursday-container">
+                <input type="radio" name="day" id="thursday" onclick="showDaySettings('thursday')"> 木
+            </label>
+            <label class="radio-container" id="friday-container">
+                <input type="radio" name="day" id="friday" onclick="showDaySettings('friday')"> 金
+            </label>
+            <label class="radio-container" id="saturday-container">
+                <input type="radio" name="day" id="saturday" onclick="showDaySettings('saturday')"> 土
+            </label>
+            <label class="radio-container" id="sunday-container">
+                <input type="radio" name="day" id="sunday" onclick="showDaySettings('sunday')"> 日
+            </label>
+        </div>
+
+        <div id="time-settings">
+            <div class="time-slot">
+                <span>朝</span>
+                <label class="switch">
+                    <input type="checkbox" id="morning-medicine" onchange="toggleTimeInput('morning', this.checked)" checked>
+                    <span class="slider"></span> 有り
+                </label>
+                <input type="number" id="morning-hour" min="0" max="23"> 時
+                <input type="number" id="morning-minute" min="0" max="59"> 分
+            </div>
+            <div class="time-slot">
+                <span>昼</span>
+                <label class="switch">
+                    <input type="checkbox" id="noon-medicine" onchange="toggleTimeInput('noon', this.checked)" checked>
+                    <span class="slider"></span> 有り
+                </label>
+                <input type="number" id="noon-hour" min="0" max="23"> 時
+                <input type="number" id="noon-minute" min="0" max="59"> 分
+            </div>
+            <div class="time-slot">
+                <span>夜</span>
+                <label class="switch">
+                    <input type="checkbox" id="evening-medicine" onchange="toggleTimeInput('evening', this.checked)" checked>
+                    <span class="slider"></span> 有り
+                </label>
+                <input type="number" id="evening-hour" min="0" max="23"> 時
+                <input type="number" id="evening-minute" min="0" max="59"> 分
+            </div>
+            <div class="time-slot">
+                <span>寝</span>
+                <label class="switch">
+                    <input type="checkbox" id="night-medicine" onchange="toggleTimeInput('night', this.checked)" checked>
+                    <span class="slider"></span> 有り
+                </label>
+                <input type="number" id="night-hour" min="0" max="23"> 時
+                <input type="number" id="night-minute" min="0" max="59"> 分
+            </div>
+            <button class="save-button" onclick="saveSettings()">保存</button>
+        </div>
+    </div>
+
+    <script src="/static/settings_script.js"></script>
+</body>
+</html>

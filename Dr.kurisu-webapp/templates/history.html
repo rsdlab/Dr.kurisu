@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服薬履歴確認</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>服薬履歴確認</h1>
+        <div class="search-bar">
+            <label for="date">日付</label>
+            <input type="date" id="date">
+            <button id="search-btn">検索</button>
+            <button id="reset-btn">検索解除</button>
+        </div>
+        
+        <div class="result-container">
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>日付</th>
+                        <th>時間</th>
+                        <th>時間帯</th>
+                        <th>状態</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                    <!-- 検索結果がここに表示されます -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/history_script.js"></script>
+</body>
+</html>
